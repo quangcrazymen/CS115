@@ -1,0 +1,236 @@
+
+<!-- saved from url=(0053)http://websites.uwlax.edu/twill/svd/action/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+   
+   <meta name="description" content="Introduction to Singular Value Decomposition">
+   <meta name="keywords" content="singular value decomposition, svd, introduction to svd">
+   <meta name="GENERATOR" content="Microsoft FrontPage 12.0">
+   <title> Matrix Action
+</title>
+<script language="javascript1.1">
+
+
+<!-- //
+  var img_action1=new Image(216,216);
+  var img_action2=new Image(216,216);
+  img_action1.src="MatrixAction11.gif";
+  img_action2.src="MatrixAction.gif";
+
+  var img_circle=new Image(216,216);
+  var img_circleA=new Image(216,216);
+  var img_circleB=new Image(216,216);
+  var img_circleC=new Image(216,216);
+  img_circle.src="circleA11.gif";
+  img_circleA.src="circleA.gif";
+  img_circleB.src="circleB.gif";
+  img_circleC.src="circleC.gif";
+
+  var img_sine=new Image(216,216);
+  var img_sineA=new Image(216,216);
+  var img_sineB=new Image(216,216);
+  var img_sineC=new Image(216,216);
+  img_sine.src="sineA11.gif";
+  img_sineA.src="sineA.gif";
+  img_sineB.src="sineB.gif";
+  img_sineC.src="sineC.gif";
+
+  var img_surface=new Image(216,216);
+  var img_surface2=new Image(216,216);
+  img_surface.src="surface11.gif";
+  img_surface2.src="surface.gif";
+
+
+  // -->
+
+
+   </script>
+</head>
+<body bgcolor="#FFFFFF" link="#000066" vlink="#666666" alink="#999999" leftmargin="8" topmargin="8">
+&nbsp;
+<table border="" cellspacing="0" cellpadding="5">
+<tbody><tr>
+<td valign="TOP" rowspan="2" width="95" bgcolor="#99FF99">
+<hr width="100%"><a href="http://websites.uwlax.edu/twill/svd/index.html">Introduction</a>&nbsp;
+<hr width="100%"><a href="http://websites.uwlax.edu/twill/svd/action/index.html">Matrix Action</a>&nbsp;
+<hr width="100%"><a href="http://websites.uwlax.edu/twill/svd/perpframes/index.html">Perpframes,</a>&nbsp;
+<br><a href="http://websites.uwlax.edu/twill/svd/perpframes/index.html">Aligners and Hangers</a>&nbsp;
+<hr width="100%"><a href="http://websites.uwlax.edu/twill/svd/stretchers/index.html">Stretchers</a>&nbsp;
+<hr width="100%"><a href="http://websites.uwlax.edu/twill/svd/coordinates/index.html">Coordinates</a>&nbsp;
+<hr width="100%"><a href="http://websites.uwlax.edu/twill/svd/projections/index.html">Projections</a>&nbsp;
+<hr width="100%"><a href="http://websites.uwlax.edu/twill/svd/svd/index.html">SVD</a>&nbsp;
+<hr width="100%"><a href="http://websites.uwlax.edu/twill/svd/subspaces/index.html">Matrix Subspaces&nbsp;</a>&nbsp;
+<hr width="100%"><a href="http://websites.uwlax.edu/twill/svd/systems/index.html">Linear Systems</a>&nbsp;
+<br><a href="http://websites.uwlax.edu/twill/svd/systems/index.html">Pseudo-Inverse</a>&nbsp;
+<hr width="100%"><a href="http://websites.uwlax.edu/twill/svd/condition/index.html">Condition Number</a>&nbsp;
+<hr width="100%"><a href="http://websites.uwlax.edu/twill/svd/norm/index.html">Matrix Norm</a>&nbsp;
+<br><a href="http://websites.uwlax.edu/twill/svd/norm/index.html">Rank One</a>&nbsp;
+<hr width="100%"><a href="http://websites.uwlax.edu/twill/svd/compression/index.html">Image Compression</a>&nbsp;
+<hr width="100%"><a href="http://websites.uwlax.edu/twill/svd/noise/index.html">Noise Filtering</a>&nbsp;
+<hr width="100%">
+<h6>
+Todd Will<br>
+UW-La Crosse</h6>
+</td>
+
+<td align="CENTER" valign="CENTER" width="10" bgcolor="#CCCCCC">&nbsp;<a href="http://websites.uwlax.edu/twill/svd/action/index.html#Matrix">Matrix
+Hits</a>&nbsp;
+<hr width="100%"><a href="http://websites.uwlax.edu/twill/svd/action/index.html#2D%20Matrix">2D Action</a></td>
+
+<td align="CENTER" valign="TOP" bgcolor="#CCFFFF">
+<center>
+<h1>
+Matrix Action</h1></center>
+</td>
+
+<td align="CENTER" valign="CENTER" width="10" bgcolor="#CCCCCC"><a href="http://websites.uwlax.edu/twill/svd/action/index.html#3D%20Matrix">3D
+Action</a>&nbsp;
+<hr width="100%"><a href="http://websites.uwlax.edu/twill/svd/action/index.html#Exercises">Exercises</a></td>
+</tr>
+
+<tr>
+<td colspan="3" bgcolor="#FFFFFF">
+<h2>
+<a name="Matrix"></a><font color="#FF0000">Matrix Hits</font></h2>
+When you hit a point with a matrix you get another point.&nbsp;
+
+<p>When the matrix&nbsp;<img src="./Matrix Action_files/actiongr1.gif" alt="[Graphics:actiongr1.gif]" align="ABSCENTER" width="56" height="28">
+hits&nbsp;<img src="./Matrix Action_files/actiongr2.gif" alt="[Graphics:actiongr2.gif]" align="ABSCENTER" width="31" height="28">
+you get&nbsp;<img src="./Matrix Action_files/actiongr3.gif" alt="[Graphics:actiongr3.gif]" align="ABSCENTER" width="134" height="28">.&nbsp;
+<br>
+</p><hr width="100%">
+<h3>
+<font color="#3333FF">Two different ways to compute a matrix times a point.&nbsp;</font></h3>
+<b>COLUMN WAY</b> to compute&nbsp;<img src="./Matrix Action_files/actiongr4.gif" alt="[Graphics:actiongr4.gif]" align="ABSCENTER" width="21" height="17">:
+Take a linear combination of the COLUMNS of A using the weights from&nbsp;<img src="./Matrix Action_files/actiongr5.gif" alt="[Graphics:actiongr5.gif]" align="ABSCENTER" width="11" height="17">.
+E.g.&nbsp;<img src="./Matrix Action_files/actiongr6.gif" alt="[Graphics:actiongr6.gif]" align="ABSCENTER" width="281" height="32">&nbsp;
+
+<p><b>ROW WAY</b> to compute&nbsp;<img src="./Matrix Action_files/actiongr7.gif" alt="[Graphics:actiongr7.gif]" align="ABSCENTER" width="21" height="17">:
+Dot each ROW of A with&nbsp;<img src="./Matrix Action_files/actiongr8.gif" alt="[Graphics:actiongr8.gif]" align="ABSCENTER" width="11" height="17">.&nbsp;
+<br>E.g.&nbsp;<img src="./Matrix Action_files/actiongr9.gif" alt="[Graphics:actiongr9.gif]" align="ABSCENTER" width="199" height="68">&nbsp;
+<br>&nbsp;
+</p><hr width="100%">
+<h2>
+<a name="2D Matrix"></a><font color="#FF0000">2D Matrix Action</font>&nbsp;</h2>
+The plot below shows some color coded points on the unit circle. Move your
+mouse over the plot to see what happens when the matrix&nbsp;<img src="./Matrix Action_files/actiongr10.gif" alt="[Graphics:actiongr10.gif]" align="ABSCENTER" width="56" height="28">hits
+the points on the unit circle.&nbsp;
+<table>
+<tbody><tr>
+<td><a href="http://websites.uwlax.edu/twill/svd/action/index.html#action" onmouseover="action.src=img_action2.src;" onmouseout="action.src=img_action1.src;">
+<img src="./Matrix Action_files/MatrixAction11.gif" name="action" border="0" align="ABSCENTER" width="216" height="216"></a>&nbsp;</td>
+
+<td>You can see that the matrix stretches and rotates the unit circle--that's
+Matrix Action.&nbsp;</td>
+</tr>
+</tbody></table>
+
+<h3>
+
+<hr width="100%"></h3>
+
+<h3>
+<font color="#FF0000">Check out a few more.</font>&nbsp;</h3>
+
+
+<p>Put your cursor over a matrix to see the matrix hit the unit circle.&nbsp;
+<br>&nbsp;
+</p><center><table>
+<tbody><tr>
+<td><a href="http://websites.uwlax.edu/twill/svd/action/index.html#action" onmouseover="circle.src=img_circleA.src;" onmouseout="circle.src=img_circle.src;">
+<img src="./Matrix Action_files/matgr1.gif" alt="[Graphics:matgr1.gif]" align="ABSCENTER" width="69" height="32"></a></td>
+
+<td><a href="http://websites.uwlax.edu/twill/svd/action/index.html#action" onmouseover="circle.src=img_circleB.src;" onmouseout="circle.src=img_circle.src;">
+<img src="./Matrix Action_files/matgr3.gif" alt="[Graphics:matgr3.gif]" align="ABSCENTER" width="87" height="32"></a></td>
+
+<td><a href="http://websites.uwlax.edu/twill/svd/action/index.html#action" onmouseover="circle.src=img_circleC.src;" onmouseout="circle.src=img_circle.src;">
+<img src="./Matrix Action_files/matgr4.gif" alt="[Graphics:matgr4.gif]" align="ABSCENTER" width="81" height="32"></a></td>
+</tr>
+
+<tr>
+<td colspan="3"><img src="./Matrix Action_files/circleA11.gif" name="circle" border="0" align="ABSCENTER" width="216" height="216">&nbsp;</td>
+</tr>
+</tbody></table></center>
+&nbsp;
+
+<p>
+</p><hr width="100%">
+<br>&nbsp;
+<h3>
+<font color="#FF0000">You can hit other curves too.&nbsp;&nbsp;</font></h3>
+
+
+<p>Check out the same three matrices hitting a damped sine wave.&nbsp;
+<br>&nbsp;
+</p><center><table>
+<tbody><tr>
+<td><a href="http://websites.uwlax.edu/twill/svd/action/index.html#action" onmouseover="sine.src=img_sineA.src;" onmouseout="sine.src=img_sine.src;">
+<img src="./Matrix Action_files/matgr1.gif" alt="[Graphics:matgr1.gif]" align="ABSCENTER" width="69" height="32"></a><a href="http://websites.uwlax.edu/twill/svd/action/index.html#action" onmouseover="sine.src=img_sineA.src;" onmouseout="sine.src=img_sine.src;">&nbsp;</a></td>
+
+<td><a href="http://websites.uwlax.edu/twill/svd/action/index.html#action" onmouseover="sine.src=img_sineB.src;" onmouseout="sine.src=img_sine.src;">
+<img src="./Matrix Action_files/matgr3.gif" alt="[Graphics:matgr3.gif]" align="ABSCENTER" width="87" height="32"></a><a href="http://websites.uwlax.edu/twill/svd/action/index.html#action" onmouseover="sine.src=img_sineB.src;" onmouseout="sine.src=img_sine.src;">&nbsp;</a></td>
+
+<td><a href="http://websites.uwlax.edu/twill/svd/action/index.html#action" onmouseover="sine.src=img_sineC.src;" onmouseout="sine.src=img_sine.src;">
+<img src="./Matrix Action_files/matgr4.gif" alt="[Graphics:matgr4.gif]" align="ABSCENTER" width="81" height="32"></a><a href="http://websites.uwlax.edu/twill/svd/action/index.html#action" onmouseover="sine.src=img_sineC.src;" onmouseout="sine.src=img_sine.src;">&nbsp;</a></td>
+</tr>
+
+<tr>
+<td colspan="3"><img src="./Matrix Action_files/sineA11.gif" name="sine" border="0" align="ABSCENTER" width="216" height="216">&nbsp;</td>
+</tr>
+</tbody></table></center>
+
+<hr width="100%">
+<h2>
+<a name="3D Matrix"></a><font color="#FF0000">3D Matrix Action</font></h2>
+If you have a 3 by 3 matrix you can hit 3D surfaces.&nbsp;
+
+<p>Check out the matrix&nbsp;<img src="./Matrix Action_files/matgr5.gif" alt="[Graphics:matgr5.gif]" align="ABSCENTER" width="135" height="50">
+hitting this surface.&nbsp;
+<br>&nbsp;
+<table>
+<tbody><tr>
+<td><a href="http://websites.uwlax.edu/twill/svd/action/index.html#surface" onmouseover="surface.src=img_surface2.src;" onmouseout="surface.src=img_surface.src;">
+<img src="./Matrix Action_files/surface11.gif" name="surface" border="0" align="ABSCENTER" width="216" height="216"></a>&nbsp;</td>
+
+<td>The matrix appears to be rotating and stretching the surface. That's
+3D matrix action.</td>
+</tr>
+</tbody></table>
+
+</p><hr width="100%">
+<h2>
+<a name="Exercises"></a><font color="#FF0000">Exercises</font></h2>
+&nbsp;
+<table border="" cols="2" width="100%">
+<tbody><tr>
+<td>The plot to the right shows a matrix A hitting the unit circle.&nbsp;
+<ol>
+<li>
+Give estimates for <i>A<img src="./Matrix Action_files/xvec.gif" align="ABSCENTER" width="31" height="28"></i>
+and <i>A<img src="./Matrix Action_files/yvec.gif" align="ABSCENTER" width="31" height="28"></i>.</li>
+
+<li>
+Give estimates for two different points that A sends to {0,0}.</li>
+</ol>
+&nbsp;</td>
+
+<td><img src="./Matrix Action_files/during.gif" align="ABSCENTER" width="216" height="216"></td>
+</tr>
+</tbody></table>
+&nbsp;</td>
+</tr>
+</tbody></table>
+
+<hr noshade="" size="1">© 1999 Todd Will
+<br><font face="arial,helvetica"><font size="-1">Last Modified: 03-Jan-99</font></font>
+<br>
+<!--webbot bot="HitCounter" u-custom i-image="0" i-resetvalue="0" PREVIEW="&lt;strong&gt;[Hit Counter]&lt;/strong&gt;" i-digits="6" startspan --><img src="./Matrix Action_files/saved_resource" alt="Hit Counter"><!--webbot bot="HitCounter" i-checksum="12216" endspan --><br>&nbsp;
+
+		<script src="./Matrix Action_files/urchin.js" type="text/javascript">
+		</script>
+		<script type="text/javascript">
+			_uacct = "UA-1858650-1";
+			urchinTracker();
+		</script>
+
+
+</body></html>
